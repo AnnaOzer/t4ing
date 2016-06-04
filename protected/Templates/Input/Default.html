@@ -1,0 +1,14 @@
+{% extends 'Admin.html' %}
+
+{% block content %}
+    <h1>Список ингредиентов</h1>
+    <table class="table table-striped">
+        {% for item in items %}
+        <tr>
+            <td>{{ item.title}}</td>
+            <td><a href="/input/official?id={{item.Pk}}" class="btn btn-success">Показать список официальных названий</a></td>
+
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

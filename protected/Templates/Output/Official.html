@@ -1,0 +1,13 @@
+{% extends 'Admin.html' %}
+
+{% block content %}
+    <h1>Список сертифицируемой продукции</h1>
+    <table class="table table-striped">
+        {% for item in items %}
+        <tr>
+            <td>{{ item.title}}</td>
+            <td>{{ item.titleOfficial}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

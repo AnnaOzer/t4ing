@@ -1,0 +1,14 @@
+{% extends 'Admin.html' %}
+
+{% block content %}
+    <h1>Названия ингредиента <span class="bg-primary">{{ input.title }}</span> для целей сертификации</h1>
+    <table class="table table-striped">
+        {% for item in items %}
+        <tr>
+            <td>{{ item.titleOfficial}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/input/" class="btn btn-success">К списку ингредиентов</a>
+    <a href="/input/addextra?id={{ item.Pk }}" class="btn btn-danger">Добавить синоним</a>
+{% endblock %}
