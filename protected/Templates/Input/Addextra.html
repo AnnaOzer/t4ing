@@ -4,9 +4,10 @@
     <h1>Добавление синонима для ингредиента <span class="bg-primary">{{ input.title }}</span> для целей сертификации</h1>
 
     <form action="Saveextra" method="post">
-        <input type="hidden"value="{{ input.Pk }}" name="id">
-        <input type="text" name="ingextras[officialTitle]">
-        <input type="submit">
+        <input type="hidden" value="{{ input.Pk }}" name="extra[__ingr_id]">
+        <input type="hidden" value="{{ input.Pk }}" name="id">
+        <input type="text" name="extra[officialTitle]">
+        <input type="submit" class="btn">
     </form>
     <a href="/input/" class="btn btn-success">К списку ингредиентов</a>
 

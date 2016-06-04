@@ -5,11 +5,11 @@ namespace App\Models;
 use T4\Orm\Model;
 
 /**
- * Class Productextra
+ * Class Ingrextra
  * @package App\Models
  *
  * @property string $officialTitle
- * @property \App\Models\Product $product
+ * @property \App\Models\Ingr $ingr
 
  */
 

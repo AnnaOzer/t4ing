@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\Ingr;
+use App\Models\Ingrextra;
 use T4\Mvc\Controller;
 
 class Input
@@ -17,7 +18,7 @@ class Input
     {
         $ingr = Ingr::findByPK($id);
         $this->data->input = $ingr;
-        $this->data->items = $ingr->ingrextras;
+        $this->data->items = Ingrextra::findAllByColumn("__ingr_id", $id);
 
     }
 
@@ -27,14 +28,22 @@ class Input
         $this->data->input = $ingr;
     }
 
-    public function actionSaveextra($ingrextras)
+    public function actionSaveextra($extra, $id)
     {
-        $item = Ingr::findByPK($id);
-        $item->ingrextras->fill($ingrextras)
-                ->save();
+        $maslo = Ingr::findByPK($id);
+        $maslo->ingrextras->add(
+            (new Ingrextra($extra))->fill($extra)
+        );
+        $maslo->save();
         $this->redirect('/input/');
-
-
 
     }
 }
+
+/*
+ *  $book = Book::findByTitle('Война и мир');
+        $book->authors->add(
+            Author::findByName('Михаил Булгаков')
+        );
+        $book->save();
+ * */

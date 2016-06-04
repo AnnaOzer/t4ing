@@ -5,10 +5,10 @@
     <table class="table table-striped">
         {% for item in items %}
         <tr>
-            <td>{{ item.titleOfficial}}</td>
+            <td>{{ item.officialTitle}}</td>
         </tr>
         {% endfor %}
     </table>
     <a href="/input/" class="btn btn-success">К списку ингредиентов</a>
-    <a href="/input/addextra?id={{ item.Pk }}" class="btn btn-danger">Добавить синоним</a>
+    <a href="/input/addextra?id={{ input.Pk }}" class="btn btn-danger">Добавить синоним</a>
 {% endblock %}
