@@ -35,15 +35,15 @@ class Input
             (new Ingrextra($extra))->fill($extra)
         );
         $maslo->save();
-        $this->redirect('/input/');
+        $this->redirect('/input/official?id='.$id);
 
+    }
+
+
+    public function actionOfficials()
+    {
+        $this->data->items = Ingr::findAll();
+        $this->data->items->ingrextras = Ingrextra::findAll();
     }
 }
 
-/*
- *  $book = Book::findByTitle('Война и мир');
-        $book->authors->add(
-            Author::findByName('Михаил Булгаков')
-        );
-        $book->save();
- * */
