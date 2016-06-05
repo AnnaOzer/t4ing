@@ -24,10 +24,6 @@ class Product
             'titleOfficial' => ['type' => 'string'],
             'comment' => ['type' => 'string']
         ],
-
-        'relations' => [
-            'productextras' => ['type' => self::HAS_MANY, 'model' => Productextra::class],
-        ]
     ];
 }
 

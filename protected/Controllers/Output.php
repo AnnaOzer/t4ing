@@ -13,10 +13,5 @@ class Output
         $this->data->items = Product::findAll();
     }
 
-    public function actionOfficial($id)
-    {
-        $product = Product::findByPK($id);
-        var_dump($product->productextras);
-        die;
-    }
+
 }
